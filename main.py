@@ -28,7 +28,7 @@ if __name__ == '__main__':
     #
     #
 
-    #EXAMEN JANVIER 2020
+    # EXAMEN JANVIER 2020
     # print("\n\n\nexemple équation inhomogène")
     # eq = Equation(degree=2, real_roots=[2,2])
     # eq.generate_symbolic_poly()
@@ -37,7 +37,7 @@ if __name__ == '__main__':
     # eq.generate_latex_poly()
     # eq.generate_solution()
     # eq.generate_latex_file()
-
+    #
     # EXAMEN AOUT 2018
     # print("\n\n\nexemple équation inhomogène")
     # eq = Equation(degree=3, real_roots=[2,2,2])

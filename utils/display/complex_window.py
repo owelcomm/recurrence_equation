@@ -20,9 +20,9 @@ class DegreeDisplay(GridLayout):
         self.root=root
         self.size_hint_max_y=None
         self.cols=2
-        self.degree = TextInput(text = "", halign="center", multiline=False,height=30,size_hint=(0.7,None))
+        self.degree = TextInput(text = "", halign="center", multiline=False,height=120,size_hint=(0.7,None))
         self.add_widget(self.degree)
-        self.ok = Button(text = "ok",height=30,size_hint_y=None,size_hint_x=0.3,halign="right")
+        self.ok = Button(text = "ok",height=120,size_hint_y=None,size_hint_x=0.3,halign="right")
         self.ok.on_press = self.next
         self.add_widget(self.ok)
     def next(self):
@@ -37,23 +37,23 @@ class RootRequest(GridLayout):
         super().__init__(**kwargs)
         self.degree=degree
         self.root=root
-        self.height=30
+        self.height=90
         self.size_hint_max_y=None
         self.cols=2
         npossible_roots = degree//2+1
         possible_roots = [str(i*2) for i in range(npossible_roots)]
         self.dropdown = DropDown()
         for i in possible_roots:
-            btn = Button(text=i,height=30,size_hint=(0.7,None),halign="right")
+            btn = Button(text=i,height=120,size_hint=(0.7,None),halign="right")
             btn.bind(on_release=lambda btn: self.dropdown.select(btn.text))
             self.dropdown.add_widget(btn)
         self.dropdown.bind(on_select=lambda instance, x : self.set_arg(x))
 
-        self.mainBut = Button(text = possible_roots[0],height=30,size_hint=(0.7,None),halign="right")
+        self.mainBut = Button(text = possible_roots[0],height=120,size_hint=(0.7,None),halign="right")
         self.mainBut.bind(on_release=self.dropdown.open)
         self.add_widget(self.mainBut)
 
-        self.ok = Button(text = "ok",height=30,size_hint_y=None,size_hint_x=0.3,halign="right")
+        self.ok = Button(text = "ok",height=120,size_hint_y=None,size_hint_x=0.3,halign="right")
         self.ok.on_press = self.next
         self.add_widget(self.ok)
 
@@ -68,14 +68,14 @@ class RealRootDisplay(GridLayout):
     def __init__(self,root,degree,**kwargs):
         super().__init__(**kwargs)
         self.root=root
-        self.height=30
+        self.height=90
         self.size_hint_max_y=None
         self.cols=degree+1
         self.roots=[]
         for i in range(degree):
-            self.roots.append(TextInput(text = "", halign="center", multiline=False,height=30,size_hint=(0.7/degree,None)))
+            self.roots.append(TextInput(text = "", halign="center", multiline=False,height=120,size_hint=(0.7/degree,None)))
             self.add_widget(self.roots[-1])
-        self.ok = Button(text = "ok",height=30,size_hint_y=None,size_hint_x=0.3,halign="right")
+        self.ok = Button(text = "ok",height=120,size_hint_y=None,size_hint_x=0.3,halign="right")
         self.ok.on_press = self.next
         self.add_widget(self.ok)
 
@@ -97,9 +97,9 @@ class moduleDisplay(GridLayout):
         self.height=30
         self.size_hint_max_y=None
         self.cols=2
-        self.module = TextInput(text = "", halign="center", multiline=False,height=30,size_hint=(0.7,None))
+        self.module = TextInput(text = "", halign="center", multiline=False,height=120,size_hint=(0.7,None))
         self.add_widget(self.module)
-        self.ok = Button(text = "ok",height=30,size_hint_y=None,size_hint_x=0.3,halign="right")
+        self.ok = Button(text = "ok",height=120,size_hint_y=None,size_hint_x=0.3,halign="right")
         self.ok.on_press = self.next
         self.add_widget(self.ok)
     def next(self):
@@ -115,7 +115,7 @@ class argDisplay(GridLayout):
     def __init__(self,root,**kwargs):
         super().__init__(**kwargs)
         self.root=root
-        self.height=30
+        self.height=120
         self.size_hint_max_y=None
         self.cols=2
 
@@ -124,17 +124,17 @@ class argDisplay(GridLayout):
         self.anglesalt = [(0,1),(1,6),(1,4),(1,3),(1,2),(2,3),(3,4),(5,6),(1,1),(7,6),(5,4),(4,3),(3,2),(5,3),(7,4),(11,6)]
         self.dropdown = DropDown()
         for i in self.angles:
-            btn = Button(text=i,height=30,size_hint=(0.7,None),halign="right")
+            btn = Button(text=i,height=120,size_hint=(0.7,None),halign="right")
             btn.bind(on_release=lambda btn: self.dropdown.select(btn.text))
             self.dropdown.add_widget(btn)
         self.dropdown.bind(on_select=lambda instance, x : self.set_arg(x))
 
-        self.mainBut = Button(text = "0",height=30,size_hint=(0.7,None),halign="right")
+        self.mainBut = Button(text = "0",height=120,size_hint=(0.7,None),halign="right")
         self.mainBut.bind(on_release=self.dropdown.open)
         self.add_widget(self.mainBut)
 
 
-        self.ok = Button(text = "ok",height=30,size_hint_y=None,size_hint_x=0.3,halign="right")
+        self.ok = Button(text = "ok",height=120,size_hint_y=None,size_hint_x=0.3,halign="right")
         self.ok.on_press = self.next
         self.add_widget(self.ok)
 
@@ -153,14 +153,14 @@ class ConstantDisplay(GridLayout):
     def __init__(self,root,degree,**kwargs):
         super().__init__(**kwargs)
         self.root=root
-        self.height=30
+        self.height=120
         self.size_hint_max_y=None
         self.cols=degree+1
         self.const=[]
         for i in range(degree):
-            self.const.append(TextInput(text = "", halign="center", multiline=False,height=30,size_hint=(0.7/degree,None)))
+            self.const.append(TextInput(text = "", halign="center", multiline=False,height=120,size_hint=(0.7/degree,None)))
             self.add_widget(self.const[-1])
-        self.ok = Button(text = "ok",height=30,size_hint_y=None,size_hint_x=0.3,halign="right")
+        self.ok = Button(text = "ok",height=120,size_hint_y=None,size_hint_x=0.3,halign="right")
         self.ok.on_press = self.next
         self.add_widget(self.ok)
 
@@ -178,12 +178,12 @@ class ComplexDisplay(GridLayout):
         super().__init__(**kwargs)
         self.cols = 1
         self.size_hint_y=None
-        self.row_default_height = 30
+        self.row_default_height = 120
         self.root = root
-        self.add_widget(Label(text="Degré : ", halign="center",height=30,size_hint_y=None, color = labelcolor))
+        self.add_widget(Label(text="Degré : ", halign="center",height=90,size_hint_y=None, color = labelcolor))
         self.degree_win = DegreeDisplay(self)
         self.add_widget(self.degree_win)
-        self.root.height = 60*2
+        self.root.height = 90+120*2
         self.state = "degree"
         self.root.root.normalscroll.scroll_y = 1
         self.crootdone=0
@@ -192,17 +192,18 @@ class ComplexDisplay(GridLayout):
 
     def next_step(self):
         if self.state == "degree":
-            self.add_widget(Label(text="Nombre de racines complexes : ", halign="center",height=30,size_hint_y=None, color = labelcolor))
+            self.add_widget(Label(text="Nombre de racines complexes : ", halign="center",height=90,size_hint_y=None, color = labelcolor))
             self.rootreq = RootRequest(self,self.degree)
             self.add_widget(self.rootreq)
             self.state="choose_roots"
+            self.root.height += 90+120*2
 
 
         elif self.state == "choose_roots":
-            self.add_widget(Label(text="Racines réelles: ", halign="center",height=30,size_hint_y=None, color = labelcolor))
+            self.add_widget(Label(text="Racines réelles: ", halign="center",height=90,size_hint_y=None, color = labelcolor))
             self.roots_win = RealRootDisplay(self,self.nrroots)
             self.add_widget(self.roots_win)
-            self.root.height += 90
+            self.root.height += 90+120*2
             self.state = "roots_real"
 
         elif self.state == "roots_real":
@@ -216,35 +217,38 @@ class ComplexDisplay(GridLayout):
                     self.add_widget(Widget())
                     eq = r"Format des complexes : $a+bi$ et $a-bi$"
                     eq_to_png(eq,"latex_tools/solutions.png")
-                    i=Image(source="latex_tools/solutions.png",height=30,size_hint_y=None)
+                    i=Image(source="latex_tools/solutions.png",height=90,size_hint_y=None)
                     i.reload()
                     self.add_widget(i)
 
                     eq = r"$a=\rho\cos\Theta$ et $b=\rho\sin\Theta$"
                     eq_to_png(eq,"latex_tools/ab.png")
-                    i=Image(source="latex_tools/ab.png",height=30,size_hint_y=None)
+                    i=Image(source="latex_tools/ab.png",height=90,size_hint_y=None)
                     i.reload()
                     self.add_widget(i)
-                    self.root.height += 120
+
+                    self.root.height += 240
 
 
                 self.add_widget(Widget())
-                self.add_widget(Label(text="Choix de la paire de racines complexes suivante : ", halign="center",height=30,size_hint_y=None, color = labelcolor))
-                self.root.height += 90
-                self.add_widget(Label(text="Choix du module du complexe (ρ): ", halign="center", height=30, size_hint_y=None,color=labelcolor))
+                self.add_widget(Label(text="Choix de la paire de racines complexes suivante : ", halign="center",height=90,size_hint_y=None, color = labelcolor))
+                self.root.height += 120
+                self.add_widget(Label(text="Choix du module du complexe (ρ): ", halign="center", height=90, size_hint_y=None,color=labelcolor))
+                self.root.height += 120
+
                 self.module = moduleDisplay(self)
                 self.add_widget(self.module)
-                self.root.height += 60
+                self.root.height += 320
                 self.state = "roots_arg"
             else :
                 self.state = "complex_roots"
                 self.next_step()
 
         elif self.state =="roots_arg":
-            self.add_widget(Label(text="Choix de l'argument du complexe (Θ) :", halign="center", height=30, size_hint_y=None, color=labelcolor))
+            self.add_widget(Label(text="Choix de l'argument du complexe (Θ) :", halign="center", height=90, size_hint_y=None, color=labelcolor))
             self.argdisp = argDisplay(self)
             self.add_widget(self.argdisp)
-            self.root.height += 60
+            self.root.height += 90+120
             self.state = "roots_mod"
             self.crootdone+=2
 
@@ -252,44 +256,44 @@ class ComplexDisplay(GridLayout):
         elif self.state =="complex_roots":
             self.eq.generate_symbolic_poly()
             self.eq.generate_latex_poly()
-            self.add_widget(Label(text="Polynôme caractéristique factorisé :", halign="center",height=30,size_hint_y=None, color = labelcolor))
-            i=Image(source="latex_tools/polynome_factorisé.png",height=40,size_hint_y=None)
+            self.add_widget(Label(text="Polynôme caractéristique factorisé :", halign="center",height=90,size_hint_y=None, color = labelcolor))
+            i=Image(source="latex_tools/polynome_factorisé.png",height=90,size_hint_y=None)
             i.reload()
             self.add_widget(i)
-            self.add_widget(Label(text="Polynôme caractéristique non-factorisé :", halign="center",height=30,size_hint_y=None, color = labelcolor))
-            i=Image(source="latex_tools/polynome_non_factorisé.png",height=30,size_hint_y=None)
+            self.add_widget(Label(text="Polynôme caractéristique non-factorisé :", halign="center",height=90,size_hint_y=None, color = labelcolor))
+            i=Image(source="latex_tools/polynome_non_factorisé.png",height=90,size_hint_y=None)
             i.reload
             self.add_widget(i)
-            self.add_widget(Label(text="Équation de récurrence :", halign="center",height=30,size_hint_y=None, color = labelcolor,font_size='20sp'))
-            i=Image(source="latex_tools/équation_de_récurrence_highlight.png",height=60,size_hint_y=None)
+            self.add_widget(Label(text="Équation de récurrence :", halign="center",height=90,size_hint_y=None, color = labelcolor,font_size='15sp'))
+            i=Image(source="latex_tools/équation_de_récurrence_highlight.png",height=90,size_hint_y=None)
             i.reload()
             self.add_widget(i)
-            self.add_widget(Label(text="Résolution :", halign="center",height=30,size_hint_y=None, color = labelcolor))
-            i=Image(source="latex_tools/résolution.png",height=40,size_hint_y=None)
+            self.add_widget(Label(text="Résolution :", halign="center",height=90,size_hint_y=None, color = labelcolor))
+            i=Image(source="latex_tools/résolution.png",height=90,size_hint_y=None)
             i.reload()
             self.add_widget(i)
-            self.add_widget(Label(text="Choix des coefficients (a, b, c, ...) :", halign="center",height=30,size_hint_y=None, color = labelcolor))
+            self.add_widget(Label(text="Choix des coefficients (a, b, c, ...) :", halign="center",height=90,size_hint_y=None, color = labelcolor))
             self.consts = ConstantDisplay(self,self.degree)
             self.add_widget(self.consts)
-            self.root.height += 360
+            self.root.height += 120*9+320 #Todo ajuster la valeur
             self.state = "constants"
 
 
         elif self.state =="constants":
             self.eq.update_coefs(self.constants)
             self.eq.generate_solution()
-            self.add_widget(Widget(height=30))
-            self.add_widget(Label(text="Énoncé de l'exercice : ", halign="center",height=30,size_hint_y=None, color = labelcolor,font_size='15sp'))
-            self.add_widget(Label(text="Résoudre le système d'équation de récurrence suivant :", halign="center",height=40,size_hint_y=None, color = labelcolor,font_size='20sp'))
-            i=Image(source="latex_tools/équation_de_récurrence.png",height=40,size_hint_y=None)
+            self.add_widget(Widget(height=90))
+            self.add_widget(Label(text="Énoncé de l'exercice : ", halign="center",height=90,size_hint_y=None, color = labelcolor,font_size='15sp'))
+            self.add_widget(Label(text="Résoudre le système d'équation de récurrence suivant :", halign="center",height=90,size_hint_y=None, color = labelcolor,font_size='15sp'))
+            i=Image(source="latex_tools/équation_de_récurrence.png",height=90,size_hint_y=None)
             i.reload()
             self.add_widget(i)
-            i=Image(source="latex_tools/contraintes.png",height=self.degree*35,size_hint_y=None)
+            i=Image(source="latex_tools/contraintes.png",height=self.degree*60,size_hint_y=None)
             i.reload()
             self.add_widget(i)
-            self.root.height += 35*self.degree
-            self.add_widget(Widget(height=30))
-            self.root.height+=270
+            self.root.height += 60*self.degree
+            self.add_widget(Widget(height=90))
+            self.root.height+=5*120
             #self.add_widget(Label(text="Solution de l'exercice : ", halign="center",height=30,size_hint_y=None, color = labelcolor,font_size='15sp'))
             #Todo faire la résolution
             #text = "Les racines de l'équation caractéristique sont "
@@ -314,12 +318,13 @@ class ComplexDisplay(GridLayout):
             #            resocoef += " et " + alphab[i] + "=" + str(self.constants[i])
 
             #self.add_widget(Label(text=resocoef, halign="center",height=40,size_hint_y=None, color = labelcolor,font_size='20sp'))
-            self.add_widget(Widget(height=30))
+            self.add_widget(Widget(height=90))
 
-            self.reset = Button(text = "Générer une nouvelle question",height=30,size_hint_y=None)
+            self.reset = Button(text = "Générer une nouvelle question",height=120,size_hint_y=None)
             self.reset.on_press = self.root.reset
-            self.latex = Button(text = "Générer le fichier latex",height=30,size_hint_y=None)
+            self.latex = Button(text = "Générer le fichier latex",height=120,size_hint_y=None)
             self.latex.on_press = self.eq.generate_latex_file
+            self.root.height += 2*120
             self.add_widget(self.latex)
             self.add_widget(self.reset)
 
@@ -330,7 +335,7 @@ class ComplexDisplay(GridLayout):
 class ComplexWindow(GridLayout):
     def __init__(self, root, **kwargs):
         super().__init__(**kwargs)
-        self.padding=[50,40,300,40]
+        self.padding=[50,40,50,40]
         self.cols = 1
         self.root = root
         self.opt=ComplexDisplay(self)
